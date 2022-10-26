@@ -1,0 +1,13 @@
+body {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+table {
+  border: thin solid black;
+}
+
+.posts {
+  display: none;
+}
