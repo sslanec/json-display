@@ -39,12 +39,14 @@ function generateUserTable(table, data) {
   }
 }
 
-function generatePostsTable(user, table, data) {
+function clearPosts() {
   let posts = document.querySelectorAll(".post");
   for (let i of posts) {
     i.remove();
   }
+}
 
+function generatePostsTable(user, table, data) {
   for (let i of data) {
     if (i["userId"] == user) {
       let row = table.insertRow();
@@ -74,8 +76,9 @@ getData().then((response) => {
 
   let users = document.querySelectorAll(".user");
   for (let i of users) {
-    i.addEventListener("click", () =>
-      generatePostsTable(i.innerHTML, tablePosts, data)
-    );
+    i.addEventListener("click", () => {
+      clearPosts();
+      generatePostsTable(i.innerHTML, tablePosts, data);
+    });
   }
 });
