@@ -62,9 +62,7 @@ function generatePostsTable(user, table, data) {
   document.querySelector(".posts").style.display = "block";
 }
 
-var data;
-getData().then((response) => {
-  data = response;
+getData().then((data) => {
   console.log(data);
 
   const tableUsers = document.querySelector(".users");
